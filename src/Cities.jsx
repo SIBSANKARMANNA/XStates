@@ -57,7 +57,7 @@ function Cities() {
             </div>
 
             {country && state && city && (
-                <p style={{textAlign:'center'}}>You selected: <span ><b>{city}</b> , {state} , {country}</span></p>
+                <p style={{textAlign:'center'}}><span >You selected: <b>{city}</b> , {state} , {country}</span></p>
             )}
 
         </div>
