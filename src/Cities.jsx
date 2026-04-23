@@ -15,7 +15,7 @@ function Cities() {
 
 
     if (loading) return <div>Countries Loading...</div>;
-    if (error) return <div>Error in Countries: {error}</div>;
+    if (error) return <div>Error fetching Countries</div>;
 
 
     return (
@@ -38,7 +38,7 @@ function Cities() {
                 }}>
                     <option value="">Select State</option>
                     {statesLoading && <option>Loading...</option>}
-                    {statesError && <option>Error: {statesError}</option>}
+                    {statesError && <option>Error fetching states</option>}
                     {states.map((s) => (
                         <option key={s} value={s}>{s}</option>
                     ))}
@@ -48,7 +48,7 @@ function Cities() {
                 <select value={city} disabled={!state} onChange={(e) => setCity(e.target.value)}>
                     <option value="">Select City</option>
                     {citiesLoading && <option>Loading...</option>}
-                    {citiesError && <option>Error: {citiesError}</option>}
+                    {citiesError && <option>Error fetching cities</option>}
                     {cities.map((c) => (
                         <option key={c} value={c}>{c}</option>
                     ))}
