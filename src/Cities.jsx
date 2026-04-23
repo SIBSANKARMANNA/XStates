@@ -15,7 +15,7 @@ function Cities() {
 
 
     if (loading) return <div>Countries Loading...</div>;
-    if (error) return <div>Error fetching Countries</div>;
+    
 
 
     return (
@@ -28,6 +28,7 @@ function Cities() {
                     setCity('');
                 }}>
                     <option value="">Select Country</option>
+                    {error && <div>Error fetching countries</div>}
                     {countries.map((c) => (
                         <option key={c} value={c}>{c}</option>
                     ))}
@@ -38,7 +39,7 @@ function Cities() {
                 }}>
                     <option value="">Select State</option>
                     {statesLoading && <option>Loading...</option>}
-                    {statesError && <option>Error fetching states</option>}
+                    {statesError && <div>Error fetching states</div>}
                     {states.map((s) => (
                         <option key={s} value={s}>{s}</option>
                     ))}
@@ -48,7 +49,7 @@ function Cities() {
                 <select value={city} disabled={!state} onChange={(e) => setCity(e.target.value)}>
                     <option value="">Select City</option>
                     {citiesLoading && <option>Loading...</option>}
-                    {citiesError && <option>Error fetching cities</option>}
+                    {citiesError && <div>Error fetching cities</div>}
                     {cities.map((c) => (
                         <option key={c} value={c}>{c}</option>
                     ))}
@@ -56,7 +57,7 @@ function Cities() {
             </div>
 
             {country && state && city && (
-                <p style={{textAlign:'center'}}>You selected: <span style={{fontWeight: 'bold'}}>{city}</span> , {state} , {country}</p>
+                <p style={{textAlign:'center'}}>You selected: <span ><b>{city}</b> , {state} , {country}</span></p>
             )}
 
         </div>
